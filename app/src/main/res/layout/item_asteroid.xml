@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="data"
+            type="com.udacity.asteroidradar.Asteroid" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/asteroid_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{data.codename}"
+            android:textColor="@color/default_text_color"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Asteroid Item Test" />
+
+        <TextView
+            android:id="@+id/asteroid_item_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{data.closeApproachDate}"
+            android:textColor="@color/text_grey"
+            android:textSize="14sp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/asteroid_item_name"
+            tools:text="1970-01-01" />
+
+        <ImageView
+            android:id="@+id/asteroid_item_hazard_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/ic_status_potentially_hazardous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:statusIcon="@{data.potentiallyHazardous}"
+            tools:text="Asteroid Item Test" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--   <LinearLayout
+           xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:app="http://schemas.android.com/apk/res-auto"
+           xmlns:tools="http://schemas.android.com/tools"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/colorPrimary"
+           android:layout_marginTop="16dp"
+           android:gravity="center_vertical"
+           android:padding="10dp"
+           android:orientation="horizontal">
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/asteroid_item_name"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/default_text_color"
+                   android:textStyle="bold"
+                   android:padding="5dp"
+                   android:text="@{data.codename}"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   tools:text="Asteroid Item Test" />
+
+               <TextView
+                   android:id="@+id/asteroid_item_date"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="5dp"
+                   android:textColor="@color/text_grey"
+                   android:textSize="14sp"
+                   android:text="@{data.closeApproachDate}"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/asteroid_item_name"
+                   tools:text="1970-01-01" />
+           </LinearLayout>
+
+           <ImageView
+               android:id="@+id/asteroid_item_hazard_icon"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:padding="5dp"
+               android:src="@drawable/ic_status_potentially_hazardous"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:statusIcon="@{data.potentiallyHazardous}"
+               tools:text="Asteroid Item Test" />
+
+
+       </LinearLayout>
+   -->
+
+</layout>
